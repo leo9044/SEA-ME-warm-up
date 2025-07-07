@@ -1,0 +1,8 @@
+# Module00 폴더 내의 실행 파일 무시
+/Module00/Ex
+/Module00/a.out
+/Module00/*.exe
+# Module01 폴더 내의 실행 파일 무시
+/Module01/Ex
+/Module01/a.out
+/Module01/*.exe
