@@ -2,6 +2,7 @@
 #include<string>
 #include <vector>
 #include <unordered_map>
+#include <limits>
 
 using namespace std;
 
@@ -22,6 +23,7 @@ class OldPhoneBook{
             Contact newContact;
             cout << "name: ";   getline(cin, newContact.name);
             cout << "phone number(Ex.12345678): ";  cin >> newContact.phoneNumber;
+            cin.ignore(); // Clear the newline character from the input buffer
             cout << "nickname: ";   getline(cin, newContact.nickname);
             newContact.bookmarked = false;
             contacts.push_back(newContact);
@@ -81,7 +83,7 @@ class OldPhoneBook{
                 int index;
                 cout << "choose an index : ";
                 cin >> index;
-                for (int i = 0; i < contacts.size(); ++i)   if (i+1 == index) {PrintDetail(i); return;}
+                for (int i = 0; i < contacts.size(); ++i)   {if (i+1 == index) {PrintDetail(i); return;}}
                 cout << "There is no contact with that name." << endl;  return;   
                 break;
             }
@@ -168,9 +170,9 @@ int main() {
         else if(choice == "EXIT") {phoneBook.EXIT();} 
         else {cout << "Invalid input." << endl;}
 		
-        cout<< "Press any key to continue..." << endl;
-        std::cin.ignore();      //버퍼를 비우기 위해 사용
-        std::system("pause");
+        cout << "Press Enter to continue...";
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cin.get();
 	}
 
     return 0;
