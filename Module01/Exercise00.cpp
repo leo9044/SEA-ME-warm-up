@@ -19,7 +19,7 @@ public:
         print();
     }
 
-    void operator=(const Orthodox& rhs) {
+    Orthodox& operator=(const Orthodox& rhs) {
         name = rhs.name;
         speed = rhs.speed;
         cout << "Orthodox copy assignment operator called" << endl;

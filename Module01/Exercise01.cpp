@@ -15,7 +15,7 @@ class Car{
             year = 2025;
         }
         Car(const Car& rhs) : make(rhs.make), model(rhs.model), year(rhs.year) {}
-        void operator=(const Car& rhs) {
+        Car& operator=(const Car& rhs) {
             this->make = rhs.make;
             this->model = rhs.model;
             this->year = rhs.year;
@@ -37,7 +37,7 @@ class SportsCar : public Car {
         SportsCar(const SportsCar& rhs) : Car(rhs) {    // Call the base class copy constructor --> up casting
             this->topSpeed=rhs.topSpeed;
         }
-        void operator=(const SportsCar& rhs) {
+        SportsCar& operator=(const SportsCar& rhs) {
             this->topSpeed = rhs.topSpeed;
         }
         ~SportsCar() {}
