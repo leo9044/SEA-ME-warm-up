@@ -2,7 +2,60 @@
 /Module00/Ex
 /Module00/a.out
 /Module00/*.exe
+
+
+
 # Module01 폴더 내의 실행 파일 무시
 /Module01/Ex
 /Module01/a.out
 /Module01/*.exe
+
+
+
+# Module03 폴더 내의 기타 파일 무시
+# === Qt Creator 설정 파일 ===
+*.user
+*.user.*
+
+# === 빌드 디렉토리 ===
+build/
+build-*/
+*/build/
+*/build-*/
+
+# === CMake 빌드 아티팩트 ===
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+CTestTestfile.cmake
+install_manifest.txt
+
+# === 자동 생성된 Qt 파일 ===
+moc_*.cpp
+ui_*.h
+qrc_*.cpp
+
+# === 중간/바이너리 파일 ===
+*.o
+*.obj
+*.lo
+*.la
+*.a
+*.so
+*.so.*
+*.dll
+*.dylib
+*.exe
+*.app
+
+# === 로그 및 백업 ===
+*.log
+*.tmp
+*.bak
+*.swp
+*~
+
+# === 시스템 파일 ===
+.DS_Store
+Thumbs.db
