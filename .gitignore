@@ -12,16 +12,14 @@
 
 
 
-# Module03 폴더 내의 기타 파일 무시
+#Module03 폴더 내의 실행 파일 무시
 # === Qt Creator 설정 파일 ===
+.qt/
+.qtc/
+.qtc_clangd/
 *.user
 *.user.*
-
-# === 빌드 디렉토리 ===
-build/
-build-*/
-*/build/
-*/build-*/
+*.pro.user
 
 # === CMake 빌드 아티팩트 ===
 CMakeFiles/
@@ -31,12 +29,22 @@ Makefile
 CTestTestfile.cmake
 install_manifest.txt
 
+# === Ninja 빌드 파일 ===
+.ninja_deps
+.ninja_log
+
+# === 빌드 디렉토리 (로컬 및 하위 폴더 포함) ===
+build/
+build-*/
+*/build/
+*/build-*/
+
 # === 자동 생성된 Qt 파일 ===
 moc_*.cpp
 ui_*.h
 qrc_*.cpp
 
-# === 중간/바이너리 파일 ===
+# === 중간/바이너리/오브젝트 파일 ===
 *.o
 *.obj
 *.lo
@@ -49,13 +57,14 @@ qrc_*.cpp
 *.exe
 *.app
 
-# === 로그 및 백업 ===
+# === 로그 및 백업/임시 파일 ===
 *.log
 *.tmp
 *.bak
 *.swp
 *~
 
-# === 시스템 파일 ===
+# === 시스템 생성 파일 ===
 .DS_Store
 Thumbs.db
+
